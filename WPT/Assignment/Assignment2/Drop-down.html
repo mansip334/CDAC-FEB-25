@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+      background-image: url(../Assignment\ 1/photo5.jpg);
+      background-size: cover;
+      text-align: center;
+      margin: 0;
+      height: 80vh; /* Full viewport height */
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center;
+    }
+
+    form, button {
+      padding: 20px;
+      padding-right: 50px;
+      font-size: 16px;
+      margin-top: 20px;
+      background: linear-gradient(#2583,#5986);
+      width: 50%;
+      border-radius: 10px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 10px;
+      background-color: rgb(134, 134, 140);
+    }
+    </style>
+</head>
+<body>
+        <form id="myForm" onsubmit="removeSelectedItem(); return false;">
+            <h2>Drop Down</h2>
+            <select id="myDropdown">
+                <option value="OS">EMPLOYEE</option>
+                <option value="OOPJ">DEPARTMENT</option>
+                <option value="ADS">CUSTOMER</option>
+                <option value="DBT">SUPPLIER</option>
+            </select>
+            <br>
+            <button type="submit">Remove Selected Item</button>
+        </form>
+
+            <script>
+                function removeSelectedItem(){
+                    const dropdown = document.getElementById("myDropdown");
+                    const selectedIndex = dropdown.selectedIndex;
+
+                    if (dropdown.options.length > 0) {
+                    dropdown.remove(selectedIndex);
+                    } else {
+                    alert("No more items to remove!");
+                    }
+                }
+            </script>
+</body>
+</html>

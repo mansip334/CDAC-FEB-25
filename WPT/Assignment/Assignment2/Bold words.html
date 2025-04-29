@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(#EF5350,#7E57C2);
+      font-family: Arial, sans-serif;
+    }
+
+    .highlight {
+      color:red;
+    }
+
+    a {
+      color: blue;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .center-content {
+      text-align: center;
+      max-width: 600px;
+      padding: 30px;
+      background: linear-gradient(#8ff286,#d48dcc);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<form>
+  <div class="center-content">
+    <p>
+      <a id="highlightLink">On mouse over here bold words of the following paragraph will be highlighted</a>
+    </p>
+
+    <p>
+      <strong>We </strong> have just started<strong> this </strong>section for the users (
+      <strong>beginner </strong> to intermediate) who <strong>want </strong> to work with
+      <strong> various </strong>JavaScript<strong> problems </strong> and write scripts online to
+      <strong> test </strong> their JavaScript<strong> skill </strong>.
+    </p>
+  </div>
+</form>
+
+<script>
+  const link = document.getElementById("highlightLink");
+  const boldWords = document.querySelectorAll("strong");
+
+  link.addEventListener("mouseover", () => {
+    boldWords.forEach(word => word.classList.add("highlight"));
+  });
+
+  link.addEventListener("mouseout", () => {
+    boldWords.forEach(word => word.classList.remove("highlight"));
+  });
+</script>
+
+</body>
+</html>

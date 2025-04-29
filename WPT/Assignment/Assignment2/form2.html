@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form2</title>
+    <style>
+        body{
+            background: linear-gradient(#b6e44a,#da3791);
+        }
+        .form-container{
+            background: linear-gradient(#81eb71,#7E57C2);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 160px auto;
+            width: 30%;
+            height: auto;
+        }
+        .form-container input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+        .form-container button{
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+         }
+
+        #output {
+            margin-top: 20px;
+            /* background-color: #e8f5e9; */
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #333;
+    }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="userForm" onsubmit="displayValues(); return false;">
+           <label>First Name:</label>
+           <input type="text" id="firstName">
+           <label>Last Name:</label>
+           <input type="text" id="lastName">
+           <label>Contact No:</label>
+           <input type="text" id="contact">
+           <label> Email Id:</label>
+           <input type="text" id="email">
+           <button type="submit">Submit</button>
+        </form>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function displayValues() {
+          const firstName = document.getElementById("firstName").value;
+          const lastName = document.getElementById("lastName").value;
+          const contact = document.getElementById("contact").value;
+          const email = document.getElementById("email").value;
+
+          document.getElementById("output").innerHTML = `
+            <p><strong>First Name:</strong> ${firstName}</p>
+            <p><strong>Last Name:</strong> ${lastName}</p>
+            <p><strong>Contact No.:</strong> ${contact}</p>
+            <p><strong>Email ID:</strong> ${email}</p>
+          `;
+        }
+      </script>
+</body>
+</html>
